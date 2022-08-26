@@ -1,7 +1,6 @@
 package com.mino9421.spring5jokesapp.controllers;
 
 import com.mino9421.spring5jokesapp.services.JokeService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +17,7 @@ public class JokeController {
     @RequestMapping({"/", ""})
     public String showJoke(Model model) {
 
+        // this provides variable joke to the template to be used
         model.addAttribute("joke", jokeService.getJoke());
 
         return "index";
